@@ -59,16 +59,20 @@ public class SimpleCalculator<T extends Number> {
     }
 
     public T div (T first, T second) {
-        if (checkIntegerTypes(first,second)) {
-            return (T) Integer.valueOf(first.intValue() / second.intValue());
-        } else if (checkLongTypes(first,second)) {
-            return (T) Long.valueOf(first.longValue() / second.longValue());
-        } else if (checkDoubleTypes(first,second)) {
-            return (T) Double.valueOf(first.doubleValue() / second.doubleValue());
-        }  else if (checkFloatTypes(first,second)) {
-            return (T) Float.valueOf(first.floatValue() / second.floatValue());
+        if (second.doubleValue() != 0) {
+            if (checkIntegerTypes(first, second)) {
+                return (T) Integer.valueOf(first.intValue() / second.intValue());
+            } else if (checkLongTypes(first, second)) {
+                return (T) Long.valueOf(first.longValue() / second.longValue());
+            } else if (checkDoubleTypes(first, second)) {
+                return (T) Double.valueOf(first.doubleValue() / second.doubleValue());
+            } else if (checkFloatTypes(first, second)) {
+                return (T) Float.valueOf(first.floatValue() / second.floatValue());
+            } else {
+                return (T) Integer.valueOf(first.intValue() / second.intValue());
+            }
         } else {
-            return (T) Integer.valueOf(first.intValue() / second.intValue());
+            throw new ArithmeticException("Divide by zero");
         }
     }
 }
