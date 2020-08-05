@@ -89,4 +89,43 @@ public class SimpleCalculatorTest {
         double test = simpleCalculator.mul(0.5d,10d);
         assertEquals(5d,test,delta);
     }
+
+    @Test
+    public void testMulFloat() {
+        SimpleCalculator<Float> simpleCalculator = new SimpleCalculator<>();
+        float delta = 0.0001f;
+        float test = simpleCalculator.mul(0.5f,20f);
+        assertEquals(10f,test,delta);
+    }
+
+    //test div
+    @Test
+    public void testDivLong() {
+        SimpleCalculator<Long> simpleCalculator = new SimpleCalculator<>();
+        long test = simpleCalculator.div(144L,12L);
+        assertEquals(12L,test);
+    }
+
+    @Test
+    public void testDivInt() {
+        SimpleCalculator<Integer> simpleCalculator = new SimpleCalculator<>();
+        int test = simpleCalculator.div(64,8);
+        assertEquals(8,test);
+    }
+
+    @Test
+    public void testDivDouble() {
+        SimpleCalculator<Double> simpleCalculator = new SimpleCalculator<>();
+        double delta = 0.0000001d;
+        double test = simpleCalculator.div(125d,5d);
+        assertEquals(25d,test,delta);
+    }
+
+    @Test
+    public void testDivFloat() {
+        SimpleCalculator<Float> simpleCalculator = new SimpleCalculator<>();
+        float delta = 0.0001f;
+        float test = simpleCalculator.div(1024f,0.5f);
+        assertEquals(2048f,test,delta);
+    }
 }
