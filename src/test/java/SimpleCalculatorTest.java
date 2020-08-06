@@ -148,9 +148,4 @@ public class SimpleCalculatorTest {
         assertEquals(5000000000000000d, test,delta);
     }
 
-    @Test
-    public void testTravisCL() {
-        boolean test = false;
-        assertTrue(test);
-    }
 }
