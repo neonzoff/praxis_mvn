@@ -147,4 +147,10 @@ public class SimpleCalculatorTest {
         double test = simpleCalculator.div(500d, 0.0000000000001);
         assertEquals(5000000000000000d, test,delta);
     }
+
+    @Test
+    public void testTravisCL() {
+        boolean test = false;
+        assertTrue(test);
+    }
 }
